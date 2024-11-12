@@ -41,7 +41,7 @@ def main():
   print(make_sentence(2, "past"))
   print(make_sentence(2, "present"))
   print(make_sentence(2, "future"))
-  loop_main2()
+  loop_main()
 
 def get_determiner(quantity):
   """Return a randomly chosen determiner. A determiner is
@@ -153,7 +153,7 @@ def get_preposition():
   return preposition
 
 
-def get_preposition_phrase(quantity):
+def get_prepositional_phrase(quantity):
   """Build and return a prepositional phrase composed
   of three words: a preposition, a determiner, and a
   noun by calling the get_preposition, get_determiner,
@@ -166,10 +166,10 @@ def get_preposition_phrase(quantity):
   Return: a prepositional phrase.
   """
   if quantity == 1:
-    preposition_phrase = f"{get_preposition()} {get_determiner(quantity).lower()} {get_noun(quantity)}"
+    prepositional_phrase = f"{get_preposition()} {get_determiner(quantity).lower()} {get_noun(quantity)}"
   else:
-    preposition_phrase = f"{get_preposition()} {get_determiner(quantity).lower()} {get_noun(quantity)}"
-  return preposition_phrase
+    prepositional_phrase = f"{get_preposition()} {get_determiner(quantity).lower()} {get_noun(quantity)}"
+  return prepositional_phrase
 
 
 def make_sentence(quantity, tense):
@@ -181,19 +181,19 @@ def make_sentence(quantity, tense):
   and tense in the quantity and tense parameters.
   """
   if quantity == 1:
-    sentence = f"{get_determiner(quantity)} {get_adjective()} {get_noun(quantity)} {get_preposition_phrase(quantity)} {get_adverb()} {get_verb(quantity, tense)} {get_determiner(quantity).lower()} {get_adjective()} {get_noun(quantity)} {get_preposition_phrase(quantity)}."
+    sentence = f"{get_determiner(quantity)} {get_adjective()} {get_noun(quantity)} {get_prepositional_phrase(quantity)} {get_adverb()} {get_verb(quantity, tense)} {get_determiner(quantity).lower()} {get_adjective()} {get_noun(quantity)} {get_preposition_phrase(quantity)}."
   else:
-    sentence = f"{get_determiner(quantity)} {get_adjective()} {get_noun(quantity)} {get_preposition_phrase(quantity)} {get_adverb()} {get_verb(quantity, tense)} {get_determiner(quantity).lower()} {get_adjective()} {get_noun(quantity)} {get_preposition_phrase(quantity)}."
+    sentence = f"{get_determiner(quantity)} {get_adjective()} {get_noun(quantity)} {get_prepositional_phrase(quantity)} {get_adverb()} {get_verb(quantity, tense)} {get_determiner(quantity).lower()} {get_adjective()} {get_noun(quantity)} {get_preposition_phrase(quantity)}."
   return sentence
 
-def loop_main2():
+def loop_main():
   """Ask the user if they want to generate more sentences. 
-  Use the answer to determine whether to call the main() function again.
+  Use the answer to determine whether to call the main() function again
   or to end the program.
   """
   answer = 0
   while answer == 0:
-    again = input("\nDo you want to generate more sentence? (y/n) ").lower()
+    again = input("\nDo you want to generate more sentences? (y/n) ").lower()
     if again == "y":
       # loop main()
       print()
