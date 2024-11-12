@@ -1,3 +1,37 @@
+"""
+Welcome to Week 02, Project 02: Writing Functions.
+We were asked to make a program that will randomly generate a sentence.
+We were supposed to make functions that will take lists of words and then randomly choose a word from each list and return a sentence.
+We display a sentence for each quantity (singular or plural) and tense (present, past, or future), so six sentences total to be printed.
+"""
+
+# ///
+
+# Additions for this assignment: I followed the Exceeding the Requirements steps in the assingment by calling the function get_prepositional_phrase,
+# so that each sentence includes two prepositional phrases.
+# I make the function get_adjective and get_adverb and I called them in the function make_sentence. So now each sentence includes an adjective and an adverb.
+# I also added an option for the user to continue the program by prompting the user if they want more sentences, and if they do the program
+# will randomly choose new senteces. The whole program will continue to loop until the user chooses to quit the program.
+# The last thing I added was an introduction of the program to the grader (just above) and then to the user (just bellow)
+# 
+#  explaining
+# what we were asked to do and to the user how to use the program and what the user should expect from the program.
+
+# ///
+
+"""
+Hello there! Welcome to the Random Sentence Generator!
+We will made a program that will randomly generate a sentence. We have a list of words that will be used to make the sentence.
+We will display a sentence for each quantity (singular or plural) and tense (present, past, or future), 
+so six sentences total to be printed.
+This program will choose the words randomly from the lists of nouns, verbs, adjectives, adverbs, and prepositions.
+Each sentence contains two prepositional phrases. Some of the sentences might not make sense, 
+but that's okay! Because what matters is that the program works correctly and it's hilarious to read!
+By default, the program will generate six sentences, but you will be asked if you want to generate more. Feel free to continue
+generating more sentences, but if you don't want to, just say "no" and the program will end.
+Enjoy the program!
+"""
+
 import random
 
 def main():
