@@ -59,15 +59,10 @@ def convert_kPa_to_psi(pressure):
   psi = pressure * 0.145038
   return psi
 
-# def question():
-#   question1 = input("Would you like to run the program again? (yes/no) ").lower()
-#   return question1
-
 def again():
   answer = 0
   while answer == 0:
     question1 = input("Would you like to run the program again? (yes/no) ").lower()
-
     if question1 == "yes":
       main()
       answer = 1
