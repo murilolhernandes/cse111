@@ -420,3 +420,247 @@
 # if __name__ == "__main__":
 #   main()
 
+# Compound Values
+# # Example 2
+# def main():
+#   # Create a dictionary with student IDs as the keys
+#   # and student data stored in a list as the values.
+#   students_dict = {
+#     # student_ID: [given_name, surname, email_address, credits]
+#     "42-039-4736": ["Clint", "Huish", "hui20001@byui.edu", 16],
+#     "61-315-0160": ["Amelia", "Davis", "dav21012@byui.edu", 3],
+#     "10-450-1203": ["Ana", "Soares", "soa22005@byui.edu", 15],
+#     "75-421-2310": ["Abdul", "Ali", "ali20003@byui.edu", 5],
+#     "07-103-5621": ["Amelia", "Davis", "dav19008@byui.edu", 0]
+#   }
+  # A simple value is a value that doesn’t contain parts, such as an integer. A compound value is a value that has parts,
+  # such as a list. In example 1 above, the students dictionary has simple keys and values. Each key is a single string, and
+  # each value is a single string. It is possible to store compound values in a dictionary. Example 2 shows a students
+  # dictionary where each value is a Python list. Because each list contains multiple parts, we say that the dictionary
+  # stores compound values.
+
+# Finding One Item
+# # Example 3
+# def main():
+#   # Create a dictionary with student IDs as the keys
+#   # and student data stored in a list as the values.
+#   students_dict = {
+#     # student_ID: [given_name, surname, email_address, credits]
+#     "42-039-4736": ["Clint", "Huish", "hui20001@byui.edu", 16],
+#     "61-315-0160": ["Amelia", "Davis", "dav21012@byui.edu", 3],
+#     "10-450-1203": ["Ana", "Soares", "soa22005@byui.edu", 15],
+#     "75-421-2310": ["Abdul", "Ali", "ali20003@byui.edu", 5],
+#     "07-103-5621": ["Amelia", "Davis", "dav19008@byui.edu", 0]
+#   }
+#   # Get a student ID from the user.
+#   id = input("Enter a student ID: ")
+#   # This is a difficult and slow way to find an item in a
+#   # dictionary. Don't write code like this to find an item
+#   # in a dictionary!
+#   # For each item in the dictionay, check if
+#   # its key is the same as the variable id.
+#   student = None
+#   for key, value in students_dict.items(): # Bad example!
+#     if key == id:                          # Don't use a loop
+#       student = value                      # like this to find an
+#       break                                # item in a dictionary.
+
+# Correct way to find an item in a dictionary
+# # Example 4
+# def main():
+#   # Create a dictionary with student IDs as the keys
+#   # and student data stored in a list as the values.
+#   students_dict = {
+#     # student_ID: [given_name, surname, email_address, credits]
+#     "42-039-4736": ["Clint", "Huish", "hui20001@byui.edu", 16],
+#     "61-315-0160": ["Amelia", "Davis", "dav21012@byui.edu", 3],
+#     "10-450-1203": ["Ana", "Soares", "soa22005@byui.edu", 15],
+#     "75-421-2310": ["Abdul", "Ali", "ali20003@byui.edu", 5],
+#     "07-103-5621": ["Amelia", "Davis", "dav19008@byui.edu", 0]
+#   }
+#   # These are the indexes of the elements in the value lists.
+#   GIVEN_NAME_INDEX = 0
+#   SURNAME_INDEX = 1
+#   EMAIL_INDEX = 2
+#   CREDITS_INDEX = 3
+#   # Get a student ID from the user.
+#   id = input("Enter a student ID: ")
+#   # Check if the student ID is in the dictionary.
+#   if id in students_dict:
+#     # Find the student ID in the dictionary and
+#     # retrieve the corresponding value, which is a list.
+#     value = students_dict[id]
+#     # Retrieve the student's given name (first name) and
+#     # surname (last name or family name) from the list.
+#     given_name = value[GIVEN_NAME_INDEX]
+#     surname = value[SURNAME_INDEX]
+#     # Print the student's name.
+#     print(f"{given_name} {surname}")
+#   else:
+#     print("No such student")
+# # Call main to start this program.
+# if __name__ == "__main__":
+#   main()
+
+# Processing All Items
+# # Example 5
+# def main():
+#   # Create a dictionary with student IDs as the keys
+#   # and student data stored in a list as the values.
+#   students_dict = {
+#     # student_ID: [given_name, surname, email_address, credits]
+#     "42-039-4736": ["Clint", "Huish", "hui20001@byui.edu", 16],
+#     "61-315-0160": ["Amelia", "Davis", "dav21012@byui.edu", 3],
+#     "10-450-1203": ["Ana", "Soares", "soa22005@byui.edu", 15],
+#     "75-421-2310": ["Abdul", "Ali", "ali20003@byui.edu", 5],
+#     "07-103-5621": ["Amelia", "Davis", "dav19008@byui.edu", 0],
+#     "81-298-9238": ["Sama", "Patel", "pat21004@byui.edu", 8]
+#   }
+#   # These are the indexes of the elements in the value lists.
+#   GIVEN_NAME_INDEX = 0
+#   SURNAME_INDEX = 1
+#   EMAIL_INDEX = 2
+#   CREDITS_INDEX = 3
+#   total = 0
+#   # For each item in the list add the number
+#   # of credits that the students has earned.
+#   for item in students_dict.items():
+#     key = item[0]
+#     value = item[1]
+#     # Retrieve the number of credits from the value list.
+#     credits = value[CREDITS_INDEX]
+#     # Add the number of credits to the total.
+#     total += credits
+#   print(f"Total credits earned by all students: {total}")
+# # Call main to start this program.
+# if __name__ == "__main__":
+#   main()
+
+# Unpacking - combining lines 527-529 into one line only (see line 561)
+# # Example 6
+# def main():
+#   # Create a dictionary with student IDs as the keys
+#   # and student data stored in a list as the values.
+#   students_dict = {
+#     # student_ID: [given_name, surname, email_address, credits]
+#     "42-039-4736": ["Clint", "Huish", "hui20001@byui.edu", 16],
+#     "61-315-0160": ["Amelia", "Davis", "dav21012@byui.edu", 3],
+#     "10-450-1203": ["Ana", "Soares", "soa22005@byui.edu", 15],
+#     "75-421-2310": ["Abdul", "Ali", "ali20003@byui.edu", 5],
+#     "07-103-5621": ["Amelia", "Davis", "dav19008@byui.edu", 0],
+#     "81-298-9238": ["Sama", "Patel", "pat21004@byui.edu", 8]
+#   }
+#   # These are the indexes of the elements in the value lists.
+#   GIVEN_NAME_INDEX = 0
+#   SURNAME_INDEX = 1
+#   EMAIL_INDEX = 2
+#   CREDITS_INDEX = 3
+#   total = 0
+#   # For each item in the list add the number
+#   # of credits that the students has earned.
+#   for key, value in students_dict.items():
+#     # Retrieve the number of credits from the value list.
+#     credits = value[CREDITS_INDEX]
+#     # Add the number of credits to the total.
+#     total += credits
+#   print(f"Total credits earned by all students: {total}")
+# # Call main to start this program.
+# if __name__ == "__main__":
+#   main()
+
+# Dictionaries Are Similar to Lists
+
+# # Different
+# # Create a list of cities.
+# cities_list = ["Delhi", "Lagos", "Dallas"]
+# # Create a dictionary of people.
+# people_dict = {
+#   "P203": "Ignacio Torres",
+#   "P445": "Whitney Nelson",
+#   "P128": "Yasmin Li"
+# }
+
+# # Different
+# # Add two cities to the cities list.
+# cities_list.insert(1, "Paris")
+# cities_list.append("Tokyo")
+# # Add two people to the people dictionary.
+# people_dict["P205"] = "Liam Myers"
+# people_dict["P317"] = "Davina Patel"
+	
+# # Similar
+# if "Paris" in cities_list:
+# print("Paris is in the list of cities.")
+# if "P203" in people_dict:
+# print("P203 is in the dictionary of people.")
+
+
+# # Different
+# # Find Dallas in the cities list.
+# index = cities_list.index("Dallas")
+# # Find person P128 in the people dictionary.
+# person_name = people_dict["P128"]
+
+# # Similar
+# # Retrieve the element stored at
+# # index 2 in the cities list.
+# city_name = cities_list[2]
+# # Find person P128 in the people dictionary
+# # and retrieve the corresponding value.
+# person_name = people_dict["P128"]
+
+# # Similar
+# # Change the city name at index 2 to London.
+# cities_list[2] = "London"
+# # Change the name of person P205 to Finn Meyers.
+# people_dict["P205"] = "Finn Myers"
+
+# # Similar
+# # Process all the elements in the cities list.
+# for city_name in cities_list:
+#     print(city_name)
+# # Process all the items in the people dictionary.
+# for person_key, person_name in people_dict.items():
+#     print(person_name)
+
+# # Same
+# # Remove the element at index 3
+# # from the cities list.
+# cities_list.pop(3)
+# # Remove the key "P203" and its
+# # value from the people dictionary.
+# people_dict.pop("P203")
+
+# # Same
+	
+# # Call the draw_chart function and pass
+# # the citites list to that function.
+# draw_chart(cities_list)
+# # Call the hire_people function and pass
+# # the people dictionary to that function.
+# hire_people(people_dict)
+
+# Converting between Lists and Dictionaries
+# # Example 7
+# def main():
+#   # Create a list that contains five student numbers.
+#   numbers_list = ["42-039-4736", "61-315-0160", 
+#     "10-450-1203", "75-421-2310", "07-103-5621"]
+#   # Create a list that contains five student names.
+#   name_list = ["Clint Huish", "Amelia Davis", "Ana Soares",  "Abdul Ali", "Amelia Davis"]
+#   # Convert the numbers and names lists into a dictionary.
+#   student_dict = dict(zip(numbers_list, name_list))
+#   # Print the entire student dictionary.
+#   print(f"Dictionary: {student_dict}")
+#   print()
+#   # Convert the student dictionary into
+#   # two lists and named keys and values.
+#   keys = list(student_dict.keys())
+#   values = list(student_dict.values())
+#   # Print both lists.
+#   print(f"Keys: {keys}")
+#   print()
+#   print(f"Values: {values}")
+# # Call main to start this program.
+# if __name__ == "__main__":
+#   main()
