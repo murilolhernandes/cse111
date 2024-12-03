@@ -1,21 +1,45 @@
 import csv
+from datetime import datetime
 def main():
-  PRODUCT_INDEX = 0
-  products_dict = read_dictionary("products.csv", PRODUCT_INDEX)
-  print(f"All Products\n{products_dict}")
-  print(f"Requested Items")
+  try:
+    read_list("request.csv", read_dictionary("products.csv", 0))
+  except FileNotFoundError as not_found_err:
+    print(f"Error: missing file\n{not_found_err}")
+  except PermissionError as perm_err:
+    print(f"{perm_err}")
+  except:
+    print("An error has occurred.")
 
-  with open("request.csv", "rt") as csv_file:
+def read_list(filename, dictionary):
+  items = 0
+  subtotal = 0
+  print("\nInkom Emporium\n")
+  print("Ordered Items:")
+  with open(filename, "rt") as csv_file:
     reader = csv.reader(csv_file)
     next(reader)
     for row_list in reader:
-      key = row_list[0]
-      if key in products_dict:
+      try:
+        key = row_list[0]
+        items += int(row_list[1])
         product_number = row_list[0]
-        product_name = products_dict[product_number][1]
+        product_name = dictionary[product_number][1]
+        product_price = dictionary[product_number][2]
         requests = row_list[1]
-        product_price = products_dict[product_number][2]
+        subtotal += float(requests) * float(product_price)
+        taxes = 0.06 * subtotal
+        total = subtotal + taxes
         print(f"{product_name}: {requests} @ {product_price}")
+      except KeyError:
+        items -= int(row_list[1])
+        print(f"Error: unknown product ID ({key}) in the {filename} file.")
+    print(f"\nNumber of Items: {items}")
+    print(f"Subtotal: {subtotal:.2f}")
+    print(f"Sales Tax: {taxes:.2f}")
+    print(f"Total: {total:.2f}")
+  print("\nThank you for shopping at Inkom Emporium.")
+  current_date = datetime.now()
+  print(f"{current_date:%c}\n")
 
 def read_dictionary(filename, key_column_index):
   """Read the contents of a CSV file into a compound
@@ -36,6 +60,8 @@ def read_dictionary(filename, key_column_index):
         key = row_list[key_column_index]
         dictionary[key] = row_list
   return dictionary
+
+# does the costumer wants a copy of the receipt?
 
 if __name__ == "__main__":
   main()
