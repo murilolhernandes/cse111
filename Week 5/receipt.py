@@ -1,3 +1,31 @@
+"""
+Welcome to Week 05, Project 05: Grocery Store: Reading CSV files and printing receipts.
+We were asked to make a program that will read two csv files and print a receipt
+for a grocery store. We were asked to make functions that will compile online requests (contained in the CSV files)
+and print a receipt for the user, or rather the employee of the grocery store.
+"""
+
+# ///
+
+# Additions for this assignment: I followed the Exceeding the Requirements steps in the assingment by making one extra function
+# with two of the suggested requirements: dates() which will print the friendly reminder for the new year's sale and 
+# the return by date. Then I added an option for the employee to print an extra receipt for the costumer.  
+# The last thing I added was an introduction of the program to the grader (just above) and then to the user (just bellow)
+# explaining what we were asked to do and to the user how to use the program and what the user should expect from the program.
+
+# ///
+
+"""
+Hello, Inkom Emporium! Welcome to the receipt generator program!
+We've created a program that generates receipts for your online grocery store orders!
+We will do all the hard work from transferring the items in each order to the receipt so you can focus on the fun part,
+getting your constumer's groceries ready.
+We will display the items ordered, the subtotal, the sales tax, and the total! We even added a reminder for the new year's sale
+and the return by date. Don't worry it's all automated, so it will update itself every time you an order is placed!
+By default, the program will prompt you if the costumer wants a copy of the receipt, if they do, simply say "y", otherwise "n".
+Enjoy the program!
+"""
+
 import csv
 from datetime import datetime, timedelta
 def main():
