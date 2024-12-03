@@ -147,7 +147,7 @@
 # if __name__ == "__main__":
 #   main()
 
-# # Reading a CSV File into a Compounf Dictionary
+# # Reading a CSV File into a Compound Dictionary
 # # Example 5
 # import csv
 # def main():
