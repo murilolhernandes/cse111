@@ -1,8 +1,11 @@
 import csv
-from datetime import datetime
+from datetime import datetime, timedelta
 def main():
   try:
     read_list("request.csv", read_dictionary("products.csv", 0))
+    dates()
+    if copy():
+      read_list("request.csv", read_dictionary("products.csv", 0))
   except FileNotFoundError as not_found_err:
     print(f"Error: missing file\n{not_found_err}")
   except PermissionError as perm_err:
@@ -61,7 +64,23 @@ def read_dictionary(filename, key_column_index):
         dictionary[key] = row_list
   return dictionary
 
-# does the costumer wants a copy of the receipt?
+def dates(today=datetime.today().date()):
+  new_year = datetime(today.year + 1, 1, 1).date()
+  days_before_sale = (new_year - today).days
+  print(f"Friendly reminder:\nNew Year's Sale is starting in {days_before_sale} days.")
+  return_by_date = datetime.combine(today, datetime.min.time()) + timedelta(days=30)
+  return_by_date = return_by_date.replace(hour=21, minute=0, second=0)
+  print(f"Return by: {return_by_date.strftime('%m/%d/%Y %I:%M %p')}")
+
+def copy():
+  while True:
+    copy = input("Does the costumer want a copy of the receipt? (y/n) ").lower()
+    if copy == "y":
+      return True
+    elif copy == "n":
+      return False
+    else:
+      print("Please enter y or n.")
 
 if __name__ == "__main__":
   main()
