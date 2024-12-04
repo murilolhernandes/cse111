@@ -1,0 +1,50 @@
+CSE 111 Proposal for a Student Chosen Program
+
+    (This is a proposal. All proposals are written with our best
+    knowledge at the beginning of a project. As we progress from the
+    beginning to the end of a project, we gain more knowledge, and we
+    change some of our proposed ideas. This is part of completing any
+    project and is fine.  However, we still must write a proposal so
+    that our teachers or supervisors know what we intend to do. Please
+    answer each of the following questions to the best of your
+    knowledge.)
+
+1. What is the title of your program?
+    Degree Planner Tool.
+
+2. What real-world problem will your program address or help to solve?
+    It will help me keep track of which classes I have taken and how many
+    credits I have left to be able to graduate and which classes and credits 
+    I need to take in the future, and I'll attempt to make calculate
+    a graduation estimate year and term.
+
+3. What will you learn from developing this program?
+    I'll refine my skill on reading CSV files and manipulating them into dictionaries
+    that will be used by functions to calculate and display my major's requirements.
+
+4. What Python modules will your program use?
+    My program will be using CSV, math, pandas, pytest, datetime.
+
+    (Some examples are: csv, datetime, functools, matplotlib, math,
+    pandas, pytest, random, requests, and tkinter.)
+
+5. List the names of functions you will need?
+    Some of the functions I can think of that I'll need to make is:
+    get_majors_dictionary; get_certificates; get_finished_classes;
+    get_credits_to_graduate; get_credits_accomplished; change_class_status 
+    (where the user can choose to change a class that from "future" to "fulfilled").
+
+    (Remember that the most reusable functions don't get user input and
+    don't print results but instead have parameters and return a result.
+    Functions that get user input and print results are important and do
+    useful work but are not easily reusable.)
+
+    (Remember also that it's hard to test functions that get user input
+    and print results. It's easy to test functions that don't get user
+    input and don't print results but instead have parameters and return
+    a result. Therefore, you should write most of your program functions
+    to have parameters and return a result.)
+
+6. List the names of the test functions you will write.
+    test_get_certicates; test_get_credits_to_graduate; test_get_credits_accomplished.
+
