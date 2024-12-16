@@ -1,7 +1,7 @@
 Hernandes,Murilo Luiz,2024
 Class Code,Class Name,Credits,Status
-REL200C,The Eternal Family,2,In Progress
-REL225A,Foundations of Restoration A,1,Incomplete
+REL200C,The Eternal Family,2,Completed
+REL225A,Foundations of Restoration A,1,In Progress
 REL225B,Foundations of Restoration B,1,Incomplete
 REL250A,Jesus Christ Evrlst Gospel A,1,Incomplete
 REL250B,Jesus Christ Evrlst Gospel B,1,Incomplete
@@ -29,12 +29,12 @@ CSE499,Senior Project,3,Incomplete
 CIT490,Senior Project,3,Incomplete
 CIT498,Internship,3,Incomplete
 CSE110,Intro to Programming,2,Completed
-CSE111,Programming with Functions,2,In Progress
-CSE210,Programming with Classes,2,Incomplete
+CSE111,Programming with Functions,2,Completed
+CSE210,Programming with Classes,2,In Progress
 WDD130,Web Fundamentals,2,Completed
-WDD131,Dynamic Web Fundamentals,2,In Progress
-WDD231,Web Frontend Development I,2,Incomplete
-ITM111,Introduction to Databases,3,Incomplete
+WDD131,Dynamic Web Fundamentals,2,Completed
+WDD231,Web Frontend Development I,2,In Progress
+ITM111,Introduction to Databases,3,In Progress
 CSE340,Web Backend Development,3,Incomplete
 CSE341,Web Services,3,Incomplete
 WDD330,Web Frontend Development II,3,Incomplete

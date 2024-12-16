@@ -1,4 +1,5 @@
 import csv
+import sys
 
 def dictionaryBuilder(file):
   courseDict = {}
@@ -19,7 +20,7 @@ def executeProgram(dictionary):
 
 def options(dictionary):
   try:
-    menu = int(input("\n1. Search for a course\n2. View your current course load\n3. Add a course\n4. Drop a course\n5. View credits to graduate\n6. View credits accomplished\n7. Quit\n\n"))
+    menu = int(input("\n1. Search for a course\n2. View your current course load\n3. Add a course\n4. Drop a course\n5. View credits to graduate\n6. View credits completed\n7. Quit\n\n"))
     if menu == 1:
       searchCourse(dictionary)
     elif menu == 2:
@@ -31,23 +32,30 @@ def options(dictionary):
     elif menu == 4:
       dropCourse(dictionary)
       options(dictionary)
-    # elif menu == 5:
-    #   viewCreditsToGraduate(dictionary)
-    # elif menu == 6:
-    #   viewCreditsAccomplished(dictionary)
-    # elif menu == 7:
-    #   quit()
+    elif menu == 5:
+      creditsToGraduate(dictionary)
+      options(dictionary)
+    elif menu == 6:
+      creditsCompleted(dictionary)
+      options(dictionary)
+    elif menu == 7:
+      print("\nThank you for using the Degree Planner Tool!\nHappy learning!")
+      sys.exit()
+      # quit()
     else:
-      print("Please enter a valid option.")
+      print("\nPlease enter a valid option.")
+      options(dictionary)
   except ValueError as err:
-    print(f"Please enter a valid option. {err}")
+    print(f"\nPlease enter a valid option. {err}")
+    options(dictionary)
   except TypeError as err:
-    print(f"Please enter a valid option. {err}")
+    print(f"\nPlease enter a valid option. {err}")
+    options(dictionary)
 
 def searchCourse(dictionary):
   search = input("\nWould you like to search by course number or course name? (number or name, or quit): ").lower()
   if search == "number":
-    courseNumber = input("Please enter the course number: ").upper()
+    courseNumber = input("Please enter the course number: \n").upper()
     if courseNumber in dictionary:
       print(f"Course name: {dictionary[courseNumber][0]}")
       print(f"Course credits: {dictionary[courseNumber][1]}")
@@ -93,6 +101,7 @@ def currentCourseLoad(dictionary):
   return in_progress_courses
 
 def viewCourseLoad(courseLoadDictionary):
+  credits = 0
   print("\nYour current course load is:\n")
   found = False
   for key, value in courseLoadDictionary.items():
@@ -100,9 +109,11 @@ def viewCourseLoad(courseLoadDictionary):
     print(f"Course name: {value[0]}")
     print(f"Credits: {value[1]}")
     print(f"Status: {value[2]}\n")
+    credits += int(value[1])
     found = True
   if not found: 
     print("\nYour course load is empty.")
+  print(f"\nTotal credits this block: {credits}")
   # user_input = input("Please enter a filter value (or 'quit' to exit): ").lower() /// I could use this as filter to search for anything, like courses with a specific completion status, or even by their credits.
   # while user_input != "quit":
   # # user_input = input("Please enter a course number: ").upper()
@@ -147,9 +158,19 @@ def dropCourse(dictionary):
   if not found:
     print("Sorry, that course is not in your course load.")
 
-# def viewCreditsToGraduate():
+def creditsToGraduate(dictionary):
+  credits = 0
+  for key, value in dictionary.items():
+    if value[2] != "Completed":
+      credits += int(value[1])
+  print(f"\nYou need {credits} credits to graduate.")
 
-# def viewCreditsAccomplished()
+def creditsCompleted(dictionary):
+  credits = 0
+  for key, value in dictionary.items():
+    if value[2] == "Completed":
+      credits += int(value[1])
+  print(f"\nYou have completed {credits} credits.")
 
 def loop(function):
   answer == 0
@@ -191,6 +212,8 @@ def main():
     print(f"Error: missing file\n{not_found_err}")
   except PermissionError as perm_err:
     print(f"{perm_err}")
+  except SystemExit:
+    pass
   except Exception as e:
     print(f"An error has occurred: {e}")
   except:
