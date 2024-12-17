@@ -16,7 +16,6 @@ def executeProgram(dictionary):
   print("What would you like to do?")
   print("\nYour options are:")
   options(dictionary)
-  # loop(main)
 
 def options(dictionary):
   try:
@@ -41,25 +40,26 @@ def options(dictionary):
     elif menu == 7:
       print("\nThank you for using the Degree Planner Tool!\nHappy learning!")
       sys.exit()
-      # quit()
     else:
       print("\nPlease enter a valid option.")
       options(dictionary)
+  except SystemExit:
+    pass
   except ValueError as err:
     print(f"\nPlease enter a valid option. {err}")
     options(dictionary)
-  except TypeError as err:
-    print(f"\nPlease enter a valid option. {err}")
+  except:
+    print(f"\nPlease enter a valid option.")
     options(dictionary)
 
 def searchCourse(dictionary):
   search = input("\nWould you like to search by course number or course name? (number or name, or quit): ").lower()
   if search == "number":
-    courseNumber = input("Please enter the course number: \n").upper()
+    courseNumber = input("Please enter the course number: ").upper()
     if courseNumber in dictionary:
-      print(f"Course name: {dictionary[courseNumber][0]}")
+      print(f"\nCourse name: {dictionary[courseNumber][0]}")
       print(f"Course credits: {dictionary[courseNumber][1]}")
-      print(f"Course completion: {dictionary[courseNumber][2]}")
+      print(f"Course Status: {dictionary[courseNumber][2]}")
     else:
       print("Sorry, we could not find that course number.")
   elif search == "name":
@@ -70,7 +70,7 @@ def searchCourse(dictionary):
         print(f"Course number: {key}")
         print(f"Course name: {value[0]}")
         print(f"Course credits: {value[1]}")
-        print(f"Course completion: {value[2]}\n")
+        print(f"Course Status: {value[2]}\n")
         found = True
     if not found:
       print("Sorry, we could not find that course name.")  
@@ -86,15 +86,11 @@ def more(dictionary, prompt, function):
   if cont == "yes":
     function(dictionary)
   elif cont == "no":
+    # return
     options(dictionary)
   else:
     print("Please enter 'yes' or 'no'.")
     more(dictionary, prompt, function)
-
-
-# def filter_dictionary(original_dict, user_input):
-#   filtered_dict = {key: value for key, value in original_dict.items() if key == user_input and value[2] == "In Progress"}
-#   return filtered_dict
 
 def currentCourseLoad(dictionary):
   in_progress_courses = {key: value for key, value in dictionary.items() if value[2] == "In Progress"}
@@ -114,14 +110,6 @@ def viewCourseLoad(courseLoadDictionary):
   if not found: 
     print("\nYour course load is empty.")
   print(f"\nTotal credits this block: {credits}")
-  # user_input = input("Please enter a filter value (or 'quit' to exit): ").lower() /// I could use this as filter to search for anything, like courses with a specific completion status, or even by their credits.
-  # while user_input != "quit":
-  # # user_input = input("Please enter a course number: ").upper()
-  #   filtered_dict = {key: value for key, value in filtered_dict.items() if user_input}
-  # if filtered_dict:
-  #   print(filtered_dict)
-  # else:
-  #   print("No course found matching the filter criteria.")
 
 def addCourses(dictionary):
   addCourse = input("\nWhich course would you like to add? Please enter by the course number: ").upper()
@@ -154,7 +142,6 @@ def dropCourse(dictionary):
         dictionary[removeCourse][2] = "Incomplete"
         found = True
       more(dictionary, "\nWould you like to drop another course? (yes/no): ", dropCourse)
-      # found = True
   if not found:
     print("Sorry, that course is not in your course load.")
 
@@ -177,37 +164,19 @@ def loop(function):
   while answer == 0:
     again = input("\nDo you want to do something else? (y/n) ").lower()
     if again == "y":
-      # loop main()
       print()
       function()
       answer = 1
     elif again == "n":
-      # end program
       print("Goodbye!")
       answer = 1
     else:
       print("Please enter 'y' or 'n'.")
       answer = 0
-  # elif answer == 1:
-  #   while answer == 1:
-  #     print("\nPlease enter a valid option.")
-  #     message = input(errorMessage).lower()
-  #     if message == "number":
-  #       # loop main()
-  #       # print()
-  #       function()
-  #       answer = -1
-  #     elif message == "name":
-  #       function()
-  #       answer = -1
-  #     else:
-  #       # print(errorMessage)
-  #       answer = 1
 
 def main():
   try:
     executeProgram(dictionaryBuilder("degreeAudit.csv"))
-    # print(courseDict)
   except FileNotFoundError as not_found_err:
     print(f"Error: missing file\n{not_found_err}")
   except PermissionError as perm_err:
