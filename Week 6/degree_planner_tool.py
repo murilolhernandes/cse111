@@ -1,5 +1,6 @@
 import csv
 import sys
+import os
 
 def dictionaryBuilder(file):
   courseDict = {}
@@ -39,12 +40,10 @@ def options(dictionary):
       options(dictionary)
     elif menu == 7:
       print("\nThank you for using the Degree Planner Tool!\nHappy learning!")
-      sys.exit()
+      os._exit(0)
     else:
       print("\nPlease enter a valid option.")
       options(dictionary)
-  except SystemExit:
-    pass
   except ValueError as err:
     print(f"\nPlease enter a valid option. {err}")
     options(dictionary)
@@ -86,7 +85,6 @@ def more(dictionary, prompt, function):
   if cont == "yes":
     function(dictionary)
   elif cont == "no":
-    # return
     options(dictionary)
   else:
     print("Please enter 'yes' or 'no'.")
@@ -109,7 +107,7 @@ def viewCourseLoad(courseLoadDictionary):
     found = True
   if not found: 
     print("\nYour course load is empty.")
-  print(f"\nTotal credits this block: {credits}")
+  print(f"Total credits this block: {credits}")
 
 def addCourses(dictionary):
   addCourse = input("\nWhich course would you like to add? Please enter by the course number: ").upper()
@@ -124,10 +122,11 @@ def addCourses(dictionary):
         found = True
       else:
         dictionary[addCourse][2] = "In Progress"
+        print("Course added to your course load.")
         more(dictionary, "\nWould you like to add another course? (yes/no): ", addCourses)
         found = True
   if not found:   
-    print("Sorry, that course is not in your course load.")
+    print("Sorry, that course is not in your catalog.")
 
 def dropCourse(dictionary):
   removeCourse = input("\nWhich course would you like to drop? Please enter by the course number: ").upper()
@@ -141,6 +140,7 @@ def dropCourse(dictionary):
       elif updateDictionary == "drop":
         dictionary[removeCourse][2] = "Incomplete"
         found = True
+      print("Course removed to your course load.")
       more(dictionary, "\nWould you like to drop another course? (yes/no): ", dropCourse)
   if not found:
     print("Sorry, that course is not in your course load.")
@@ -173,6 +173,10 @@ def loop(function):
     else:
       print("Please enter 'y' or 'n'.")
       answer = 0
+
+def quit():
+  print("\nThank you for using the Degree Planner Tool!\nHappy learning!")
+  sys.exit()
 
 def main():
   try:
