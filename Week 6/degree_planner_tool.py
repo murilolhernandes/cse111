@@ -1,5 +1,4 @@
 import csv
-import sys
 import os
 
 def dictionaryBuilder(file):
@@ -158,25 +157,6 @@ def creditsCompleted(dictionary):
     if value[2] == "Completed":
       credits += int(value[1])
   print(f"\nYou have completed {credits} credits.")
-
-def loop(function):
-  answer == 0
-  while answer == 0:
-    again = input("\nDo you want to do something else? (y/n) ").lower()
-    if again == "y":
-      print()
-      function()
-      answer = 1
-    elif again == "n":
-      print("Goodbye!")
-      answer = 1
-    else:
-      print("Please enter 'y' or 'n'.")
-      answer = 0
-
-def quit():
-  print("\nThank you for using the Degree Planner Tool!\nHappy learning!")
-  sys.exit()
 
 def main():
   try:

@@ -1,5 +1,3 @@
-
-
 from degree_planner_tool import dictionaryBuilder, creditsToGraduate, creditsCompleted
 import pytest
 

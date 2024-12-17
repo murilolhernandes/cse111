@@ -23,6 +23,15 @@ doing any of the following:
 2021-12-03      .5      Watched video on 
 =============Example====================
 
+=============Time spent====================
+            Time Spent
+   Date       (hours)   Description of Work
+----------  ----------  -------------------------
+2024-12-14      6.5     Finished Milestone: Wrote eight program functions
+2024-12-16      10      Wrote four more functions and 5 test functions
+=============Time spent====================
+
+
 
 
 2. In Canvas, submit this completed text file, your Python program, your
