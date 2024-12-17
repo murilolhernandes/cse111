@@ -21,7 +21,7 @@ def test_dictionaryBuilder():
   }
   assert course_dict == expected_dict
 
-def test_dictionaryBuilder_empty_file():
+  # def test_dictionaryBuilder_empty_file():
   csv_file = "empty_courses.csv"
   with open(csv_file, "w") as f:
     f.write("Hernandes,Murilo Luiz,2024\n")
@@ -32,8 +32,7 @@ def test_dictionaryBuilder_empty_file():
 
   expected_dict = {}
   assert course_dict == expected_dict
-
-def test_dictionaryBuilder_invalid_file():
+  # def test_dictionaryBuilder_invalid_file():
   csv_file = "non_existing_courses.csv"
   with pytest.raises(FileNotFoundError):
     dictionaryBuilder(csv_file)

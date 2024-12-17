@@ -27,8 +27,14 @@ doing any of the following:
             Time Spent
    Date       (hours)   Description of Work
 ----------  ----------  -------------------------
-2024-12-14      6.5     Finished Milestone: Wrote eight program functions
-2024-12-16      10      Wrote four more functions and 5 test functions
+2024-12-14      1      Reviewed the proposal plan and brainstormed layout of the program
+2024-12-14      2      Wrote four program functions and built main menu
+2024-12-14      3.5    Finished Milestone: Wrote four more program functions that branches from the main menu options
+2024-12-16      3      Wrote four more functions
+2024-12-16      2      debugged main menu exit option (chose os._exit() to use)
+2024-12-16      3      Wrote three test functions
+2024-12-16      2      Debugged the test functions and final walkthrough to make sure the program runs smoothly, fixed typos and spacing. 
+
 =============Time spent====================
 
 
