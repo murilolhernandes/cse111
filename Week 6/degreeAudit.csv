@@ -1,8 +1,8 @@
 Student's Last Name,Student's First Name,Current Year
 Class Code,Class Name,Credits,Status
 REL200C,The Eternal Family,2,Completed
-REL225A,Foundations of Restoration A,1,In Progress
-REL225B,Foundations of Restoration B,1,Incomplete
+REL225A,Foundations of Restoration A,1,Completed
+REL225B,Foundations of Restoration B,1,In Progress
 REL250A,Jesus Christ Evrlst Gospel A,1,Incomplete
 REL250B,Jesus Christ Evrlst Gospel B,1,Incomplete
 REL275A,Teachings of the Book of Mormon A,1,Incomplete
@@ -13,7 +13,7 @@ REL290A,The Divine Gift of Forgiveness A,1,Incomplete
 REL290B,The Divine Gift of Forgiveness B,1,Incomplete
 REL333A,Teachings of Living Prophets A,1,Incomplete
 REL333B,Teachings of Living Prophets B,1,Incomplete
-MATH108X,Math for the Real World,3,Incomplete
+MATH108X,Math for the Real World,3,In Progress
 WRIT101,Writing Professional Context,3,Incomplete
 ENG150,Writing/Reasoning Foundation,3,Incomplete
 BUS301,Adv Writing in Pro Contexts,3,Incomplete
@@ -30,19 +30,19 @@ CIT490,Senior Project,3,Incomplete
 CIT498,Internship,3,Incomplete
 CSE110,Intro to Programming,2,Completed
 CSE111,Programming with Functions,2,Completed
-CSE210,Programming with Classes,2,In Progress
+CSE210,Programming with Classes,2,Completed
 WDD130,Web Fundamentals,2,Completed
 WDD131,Dynamic Web Fundamentals,2,Completed
-WDD231,Web Frontend Development I,2,In Progress
-ITM111,Introduction to Databases,3,In Progress
+WDD231,Web Frontend Development I,2,Completed
+ITM111,Introduction to Databases,3,Incomplete
 CSE340,Web Backend Development,3,Incomplete
 CSE341,Web Services,3,Incomplete
 WDD330,Web Frontend Development II,3,Incomplete
 WDD430,Web Full-Stack Development,3,Incomplete
-CSE212,Programming w/Data Struct,2,Incomplete
+CSE212,Programming w/Data Struct,2,In Progress
 CSE270,Software Testing,3,Incomplete
 CSE325,.NET Software Development,3,Incomplete
 CSE370,Software Eng. Principles,2,Incomplete
 CSE430,Architectural Design,2,Incomplete
-CSE300,Professional Readiness,1,Incomplete
+CSE300,Professional Readiness,1,In Progress
 CSE310,Applied Programming,3,Incomplete
